@@ -8,14 +8,19 @@ public class Bar : MonoBehaviour
     public void Initialize(int currentValue, int maxValue)
     {
         MaxValue = maxValue;
-        OnValueChanged(currentValue);
+        SetValue(currentValue);
     }
 
     public void OnValueChanged(int currentValue)
     {
-        CurrentValue = currentValue;
-        UpdateView();
+        SetValue(currentValue);
     }
 
     protected virtual void UpdateView() { }
+
+    private void SetValue(int currentValue)
+    {
+        CurrentValue = currentValue;
+        UpdateView();
+    }
 }
