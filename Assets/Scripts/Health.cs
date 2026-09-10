@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 
     private int _current;
 
-    public event Action<int> AmountChanged;
+    public event Action<int> ValueChanged;
 
     public int Current => _current;
     public int Max => _max;
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
         if (_current < 0)
             _current = 0;
 
-        AmountChanged?.Invoke(_current);
+        ValueChanged?.Invoke(_current);
     }
 
     public void Increase(int amount)
@@ -34,6 +34,6 @@ public class Health : MonoBehaviour
         if (_current > _max)
             _current = _max;
 
-        AmountChanged?.Invoke(_current);
+        ValueChanged?.Invoke(_current);
     }
 }
