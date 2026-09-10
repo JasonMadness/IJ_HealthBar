@@ -10,18 +10,18 @@ public class Bootstrapper : MonoBehaviour
     private void Start()
     {
         foreach (var bar in _bars)
-            bar.Initialize(_health.CurrentValue, _health.MaxValue);
+            bar.Initialize(_health.Current, _health.Max);
     }
 
     private void OnEnable()
     {
         foreach (var bar in _bars)
-            _health.ValueChanged += bar.OnHealthValueChanged;
+            _health.ValueChanged += bar.OnValueChanged;
     }
 
     private void OnDisable()
     {
         foreach (var bar in _bars)
-            _health.ValueChanged -= bar.OnHealthValueChanged;
+            _health.ValueChanged -= bar.OnValueChanged;
     }
 }
