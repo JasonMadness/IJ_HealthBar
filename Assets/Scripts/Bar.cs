@@ -11,5 +11,6 @@ public class Bar : MonoBehaviour
         _maxValue = maxValue;
     }
 
+    public virtual void OnValueChanged(int currentValue) { }
     public virtual void UpdateView() { }
 }
