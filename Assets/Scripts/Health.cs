@@ -7,8 +7,7 @@ public class Health : MonoBehaviour
 
     private int _current;
 
-    public event Action DamageTaken;
-    public event Action Died;
+    public event Action<int> AmountChanged;
 
     public int Current => _current;
     public int Max => _max;
@@ -18,16 +17,14 @@ public class Health : MonoBehaviour
         _current = _max;
     }
 
-    public void TakeDamage(int damage)
+    public void Decrease(int damage)
     {
-        _current -= damage;  
-        DamageTaken?.Invoke();
+        _current -= damage;
 
-        if (_current <= 0)
-        {
+        if (_current < 0)
             _current = 0;
-            Died?.Invoke();
-        }
+
+        AmountChanged?.Invoke(_current);
     }
 
     public void Increase(int amount)
@@ -36,5 +33,7 @@ public class Health : MonoBehaviour
 
         if (_current > _max)
             _current = _max;
+
+        AmountChanged?.Invoke(_current);
     }
 }
