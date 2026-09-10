@@ -678,6 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 347950828}
+  - component: {fileID: 347950829}
   m_Layer: 5
   m_Name: Smooth Bar
   m_TagString: Untagged
@@ -705,6 +706,20 @@ RectTransform:
   m_AnchoredPosition: {x: 620, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &347950829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347950827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528070a6e98bb7e438645014a6f82964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 370683137}
+  _speed: 1
 --- !u!1 &370683135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2042,7 @@ MonoBehaviour:
   _bars:
   - {fileID: 659746457}
   - {fileID: 497263581}
+  - {fileID: 347950829}
 --- !u!4 &2116737831
 Transform:
   m_ObjectHideFlags: 0
