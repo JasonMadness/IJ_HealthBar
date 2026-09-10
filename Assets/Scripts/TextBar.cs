@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TextBar : Bar
 {
-    [SerializeField] private TMPro.TextMeshPro _text;
+    [SerializeField] private TextMeshProUGUI _text;
 
     protected override void UpdateView()
     {
