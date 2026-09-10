@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Bootstrapper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Health _health;
+    [SerializeField] private Bar[] _bars;
+
+    private void Start()
     {
-        
+        foreach (var bar in _bars)
+            bar.Initialize(_health.CurrentValue, _health.MaxValue);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        foreach (var bar in _bars)
+            _health.ValueChanged += bar.OnHealthValueChanged;
+    }
+
+    private void OnDisable()
+    {
+        foreach (var bar in _bars)
+            _health.ValueChanged -= bar.OnHealthValueChanged;
     }
 }
