@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _currentValue;
+    private int _maxValue;
+
+    public void Initialize(int currentValue, int maxValue)
     {
-        
+        _currentValue = currentValue;
+        _maxValue = maxValue;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public virtual void UpdateView() { }
 }
