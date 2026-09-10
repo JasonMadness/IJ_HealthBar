@@ -6,7 +6,7 @@ public class SmoothBar : Bar
     [SerializeField] private Slider _slider;
     [SerializeField] private float _speed;
 
-    private float _epsilon = 0.01f;
+    private float _epsilon = 0.0001f;
     private float _targetValue;
 
     private void Update()
