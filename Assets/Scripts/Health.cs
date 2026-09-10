@@ -17,11 +17,6 @@ public class Health : MonoBehaviour
         _current = _max;
     }
 
-    private void Start()
-    {
-        ValueChanged?.Invoke(_current);
-    }
-
     public void Decrease(int damage)
     {
         _current -= damage;
